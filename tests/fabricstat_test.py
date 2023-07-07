@@ -291,6 +291,8 @@ class TestMultiAsicFabricStatCmd(object):
     def test_clear_command(self):
         runner = CliRunner()
         result = runner.invoke(clear.cli.commands["fabriccountersqueue"], [])
+        print(result.exit_code)
+        print(result.stdout)
         assert result.exit_code == 0
 
         result = runner.invoke(clear.cli.commands["fabriccountersport"], [])
